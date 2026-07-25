@@ -1,0 +1,622 @@
+/* CGPA Calculator - Modern Premium UI */
+
+.cgpa-calculator-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
+}
+
+.cgpa-calculator-container {
+    flex: 1;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    width: 100%;
+}
+
+/* Header Section */
+.cgpa-header {
+    /* Animated Gradient Background */
+    background: linear-gradient(-45deg, #86d437, #04AA6D, #7bc930, #028a55);
+    background-size: 300% 300%;
+    animation: gradientBG 8s ease infinite, slideDown 0.6s ease-out;
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 30px rgba(134, 212, 55, 0.3);
+    text-align: center;
+    color: white;
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.cgpa-header-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 15px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+}
+
+.cgpa-header-icon svg {
+    width: 32px;
+    height: 32px;
+    color: white;
+}
+
+.cgpa-header h1 {
+    margin: 0 0 10px 0;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.cgpa-header p {
+    margin: 0;
+    font-size: 15px;
+    opacity: 0.95;
+    line-height: 1.6;
+}
+
+/* Info Card */
+.cgpa-info-card {
+    background: white;
+    border-radius: 16px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    animation: fadeInUp 0.6s ease-out 0.1s both;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.cgpa-info-card h3 {
+    margin: 0 0 15px 0;
+    font-size: 18px;
+    font-weight: 700;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cgpa-info-card h3::before {
+    content: '📚';
+    font-size: 20px;
+}
+
+.cgpa-info-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.cgpa-info-list li {
+    position: relative;
+    padding: 10px 0 10px 30px;
+    margin-bottom: 8px;
+    color: #555;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.cgpa-info-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(135deg, #04AA6D 0%, #028a55 100%);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* Semesters Container */
+.cgpa-semesters-container {
+    background: white;
+    border-radius: 16px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    animation: fadeInUp 0.6s ease-out 0.2s both;
+}
+
+.semesters-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.semesters-header h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.semesters-count {
+    background: linear-gradient(135deg, #86d437 0%, #7bc930 100%);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* Semester Card */
+.semester-card {
+    background: white;
+    border: 1px solid #eef2f6;
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+    animation: scaleIn 0.4s ease-out;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    position: relative;
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95) translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.semester-card:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+    border-color: #86d437;
+}
+
+.semester-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding-left: 35px;
+    /* Add space for the button */
+}
+
+.semester-label {
+    font-size: 15px;
+    font-weight: 700;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.semester-number {
+    background: linear-gradient(135deg, #04AA6D 0%, #028a55 100%);
+    color: white;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 700;
+    box-shadow: 0 2px 8px rgba(4, 170, 109, 0.3);
+}
+
+/* Remove Semester Button */
+.remove-semester-btn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    /* Moved to top-left */
+    right: auto;
+    /* Reset right */
+    background: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    font-weight: 700;
+    box-shadow: 0 4px 12px rgba(255, 77, 77, 0.2);
+    z-index: 2;
+}
+
+.remove-semester-btn:hover {
+    background: #ff3333;
+    transform: scale(1.1) rotate(90deg);
+    box-shadow: 0 6px 15px rgba(255, 77, 77, 0.4);
+}
+
+.semester-inputs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.input-group label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #555;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.input-group label svg {
+    width: 16px;
+    height: 16px;
+    color: #86d437;
+}
+
+.input-group input {
+    padding: 12px 16px;
+    border: 2px solid #e9ecef;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.input-group input:focus {
+    border-color: #86d437;
+    box-shadow: 0 0 0 4px rgba(134, 212, 55, 0.1);
+}
+
+.input-group input::placeholder {
+    color: #adb5bd;
+}
+
+/* Action Buttons */
+.cgpa-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 25px;
+    animation: fadeInUp 0.6s ease-out 0.3s both;
+}
+
+.add-semester-btn,
+.calculate-btn {
+    padding: 16px 32px;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.add-semester-btn {
+    background: white;
+    color: #86d437;
+    border: 2px solid #86d437;
+}
+
+.add-semester-btn:hover {
+    background: linear-gradient(135deg, #86d437 0%, #7bc930 100%);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(134, 212, 55, 0.3);
+}
+
+.add-semester-btn svg {
+    width: 20px;
+    height: 20px;
+}
+
+.calculate-btn {
+    background: linear-gradient(135deg, #04AA6D 0%, #028a55 100%);
+    color: white;
+}
+
+.calculate-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(4, 170, 109, 0.4);
+}
+
+.calculate-btn svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* Result Display */
+.cgpa-result {
+    background: linear-gradient(135deg, #04AA6D 0%, #028a55 100%);
+    border-radius: 16px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(4, 170, 109, 0.3);
+    animation: bounceIn 0.6s ease-out;
+    margin-bottom: 25px;
+}
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+
+    70% {
+        transform: scale(0.9);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.cgpa-result-icon {
+    font-size: 48px;
+    margin-bottom: 15px;
+    animation: rotate 2s ease-in-out infinite;
+}
+
+@keyframes rotate {
+
+    0%,
+    100% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(15deg);
+    }
+}
+
+.cgpa-result h2 {
+    margin: 0 0 10px 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.cgpa-value {
+    font-size: 48px;
+    font-weight: 800;
+    color: white;
+    margin: 0;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.cgpa-result p {
+    margin: 15px 0 0 0;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* Empty State */
+.empty-state {
+    text-align: center;
+    padding: 40px 20px;
+    color: #999;
+}
+
+.empty-state svg {
+    width: 64px;
+    height: 64px;
+    color: #ddd;
+    margin-bottom: 15px;
+}
+
+.empty-state p {
+    margin: 0;
+    font-size: 15px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .cgpa-calculator-container {
+        padding: 15px;
+    }
+
+    .cgpa-header {
+        padding: 20px;
+        border-radius: 16px;
+    }
+
+    .cgpa-header h1 {
+        font-size: 22px;
+    }
+
+    .cgpa-header p {
+        font-size: 14px;
+    }
+
+    .cgpa-info-card,
+    .cgpa-semesters-container {
+        padding: 20px;
+        border-radius: 12px;
+    }
+
+    .cgpa-actions {
+        gap: 12px;
+    }
+
+    .add-semester-btn,
+    .calculate-btn {
+        padding: 14px 24px;
+        font-size: 15px;
+    }
+
+    .cgpa-value {
+        font-size: 40px;
+    }
+
+    .semesters-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cgpa-header {
+        padding: 20px 15px;
+    }
+
+    .cgpa-header h1 {
+        font-size: 20px;
+    }
+
+    .cgpa-info-card,
+    .cgpa-semesters-container {
+        padding: 15px;
+    }
+
+    /* Compact Semester Card for Mobile */
+    .semester-card {
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        position: relative;
+    }
+
+    .semester-card-header {
+        margin-bottom: 0px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #f0f0f0;
+        padding-left: 35px;
+        /* Ensure space on mobile too */
+    }
+
+    .semester-label {
+        font-size: 14px;
+        gap: 8px;
+    }
+
+    /* Removed .semester-number styles */
+
+    .remove-semester-btn {
+        width: 24px;
+        height: 24px;
+        font-size: 12px;
+        position: absolute;
+        /* Keep absolute for top-left */
+        top: 10px;
+        left: 10px;
+        margin-left: 0;
+    }
+
+    .semester-inputs {
+        /* Stack inputs vertically for better focus */
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .input-group {
+        flex-direction: column;
+        /* Label on top */
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .input-group label {
+        font-size: 13px;
+        margin-bottom: 0;
+        width: 100%;
+        /* Full width label */
+        flex-shrink: 0;
+    }
+
+    .input-group input {
+        padding: 10px 12px;
+        font-size: 15px;
+        width: 100%;
+        height: 42px;
+        /* Taller input */
+    }
+
+    .cgpa-result {
+        padding: 20px;
+    }
+
+    .cgpa-value {
+        font-size: 36px;
+    }
+}

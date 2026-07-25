@@ -1,0 +1,568 @@
+/* Home Page Styles - Professional & Modern Design */
+
+.home-page {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.home-content {
+    width: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.home-page footer {
+    margin-top: auto;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(-45deg, #86d437, #04AA6D, #7bc930, #028a55);
+    background-size: 300% 300%;
+    animation: gradientBG 8s ease infinite;
+    padding: 40px 20px;
+    margin: 0;
+    max-width: 100%;
+    border-radius: 0;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.1) 25%, transparent 25%, transparent 75%, rgba(255, 255, 255, 0.1) 75%, rgba(255, 255, 255, 0.1)),
+        linear-gradient(45deg, rgba(255, 255, 255, 0.1) 25%, transparent 25%, transparent 75%, rgba(255, 255, 255, 0.1) 75%, rgba(255, 255, 255, 0.1));
+    background-size: 60px 60px;
+    background-position: 0 0, 30px 30px;
+    opacity: 0.3;
+    z-index: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+}
+
+.hero-title {
+    font-size: 42px;
+    font-weight: 800;
+    color: #ffffff;
+    margin: 0 0 15px 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+    line-height: 1.2;
+    text-align: center;
+    width: 100%;
+}
+
+.hero-subtitle {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.95);
+    margin: 0 0 25px 0;
+    font-weight: 500;
+    text-align: center;
+    width: 100%;
+}
+
+.hero-date {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.25);
+    padding: 12px 24px;
+    border-radius: 24px;
+    backdrop-filter: blur(10px);
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.calendar-icon {
+    width: 22px;
+    height: 22px;
+    stroke-width: 2.5;
+}
+
+/* Calculators Grid */
+.calculators-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    max-width: 95%;
+    margin: 40px auto;
+    padding: 0 10px;
+}
+
+/* Calculator Card */
+.calculator-card {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(134, 212, 55, 0.1);
+}
+
+.calculator-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* Card Header */
+.card-header {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 25px;
+    text-align: center;
+    border-bottom: 3px solid #86d437;
+}
+
+.card-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 15px;
+    padding: 15px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sgpa-icon {
+    background: linear-gradient(135deg, #86d437 0%, #7bc930 100%);
+    color: #ffffff;
+}
+
+.cgpa-icon {
+    background: linear-gradient(135deg, #04AA6D 0%, #039962 100%);
+    color: #ffffff;
+}
+
+.card-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.card-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1a4704;
+    margin: 0;
+}
+
+/* Card Body */
+.card-body {
+    padding: 25px;
+}
+
+.card-description {
+    color: #666;
+    font-size: 15px;
+    line-height: 1.7;
+    margin: 0 0 20px 0;
+    text-align: center;
+}
+
+/* Features List */
+.features-list {
+    margin: 20px 0;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 0;
+    color: #333;
+    font-size: 14px;
+}
+
+.check-icon {
+    width: 20px;
+    height: 20px;
+    color: #86d437;
+    flex-shrink: 0;
+}
+
+/* Formula Box */
+.formula-box {
+    background: linear-gradient(135deg, #f8fdf5 0%, #f0fae8 100%);
+    border-left: 4px solid #86d437;
+    border-radius: 12px;
+    padding: 18px;
+    margin-top: 20px;
+}
+
+.formula-label {
+    font-weight: 700;
+    color: #1a4704;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+}
+
+.formula-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.formula-text {
+    font-family: 'Times New Roman', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #1a4704;
+}
+
+.fraction-wrapper {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-family: 'Times New Roman', serif;
+}
+
+.fraction-top {
+    border-bottom: 2px solid #1a4704;
+    padding: 0 8px 4px;
+    font-size: 14px;
+    color: #333;
+    font-weight: 500;
+}
+
+.fraction-bottom {
+    padding: 4px 8px 0;
+    font-size: 14px;
+    color: #333;
+    font-weight: 500;
+}
+
+/* Card Footer */
+.card-footer {
+    padding: 25px;
+    background: #fafafa;
+    border-top: 1px solid #e9ecef;
+}
+
+.calc-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 15px 25px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.sgpa-button {
+    background: linear-gradient(135deg, #86d437 0%, #7bc930 100%);
+    color: #ffffff;
+}
+
+.sgpa-button:hover {
+    background: linear-gradient(135deg, #7bc930 0%, #6bb520 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(134, 212, 55, 0.4);
+}
+
+.cgpa-button {
+    background: linear-gradient(135deg, #04AA6D 0%, #039962 100%);
+    color: #ffffff;
+}
+
+.cgpa-button:hover {
+    background: linear-gradient(135deg, #039962 0%, #028851 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(4, 170, 109, 0.4);
+}
+
+.arrow-icon {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease;
+}
+
+.calc-button:hover .arrow-icon {
+    transform: translateX(5px);
+}
+
+/* Info Section */
+.info-section {
+    max-width: 95%;
+    margin: 40px auto;
+    padding: 0 10px;
+}
+
+.info-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border: 2px solid #86d437;
+    text-align: center;
+}
+
+.info-card h3 {
+    color: #1a4704;
+    font-size: 22px;
+    margin: 0 0 15px 0;
+    font-weight: 700;
+}
+
+.info-card p {
+    color: #666;
+    font-size: 15px;
+    line-height: 1.8;
+    margin: 0;
+}
+
+/* Quick Links */
+.quick-links {
+    max-width: 95%;
+    margin: 30px auto 40px;
+    padding: 0 10px;
+    text-align: center;
+}
+
+.quick-link-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px 30px;
+    background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
+    color: #1a4704;
+    border: 3px solid #86d437;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.quick-link-btn:hover {
+    background: linear-gradient(135deg, #86d437 0%, #7bc930 100%);
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(134, 212, 55, 0.3);
+}
+
+.developer-btn {
+    border-color: #38bdf8;
+    color: #ffffff;
+    background: linear-gradient(45deg, #38e2f8, #0edee9, #026ec7, #38bdf8);
+    background-size: 300% 300%;
+    animation: gradientBG 4s ease infinite;
+    transition: all 0.3s ease;
+    border: none;
+    box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3);
+}
+
+.developer-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 22px rgba(56, 189, 248, 0.5);
+    filter: brightness(1.1);
+}
+
+.link-icon {
+    width: 22px;
+    height: 22px;
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 768px) {
+
+    /* Mobile-optimized container */
+    .home-content {
+        padding: 0 5px;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .hero-section {
+        border-radius: 16px;
+        padding: 15px 20px;
+        margin: 15px auto;
+    }
+
+    .hero-title {
+        font-size: 24px;
+        line-height: 1.3;
+        margin-bottom: 8px;
+    }
+
+    .hero-subtitle {
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
+
+    .hero-date {
+        font-size: 12px;
+        padding: 10px 20px;
+    }
+
+    .calculators-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        /* Reduced from 25px */
+        margin: 20px auto;
+        /* Reduced from 30px */
+    }
+
+    .card-header {
+        padding: 15px;
+        /* Reduced from 25px */
+    }
+
+    .card-icon {
+        width: 50px;
+        height: 50px;
+        margin: 0 auto 10px;
+        padding: 10px;
+    }
+
+    .card-body {
+        padding: 15px;
+        /* Reduced from 25px */
+    }
+
+    .card-title {
+        font-size: 20px;
+        margin-bottom: 5px;
+    }
+
+    .card-description {
+        font-size: 13px;
+        margin: 0 0 10px 0;
+        /* Reduced margin */
+        line-height: 1.5;
+    }
+
+    .features-list {
+        margin: 10px 0;
+        /* Reduced from 20px */
+    }
+
+    .feature-item {
+        font-size: 13px;
+        padding: 5px 0;
+        /* Reduced from 10px */
+        gap: 8px;
+    }
+
+    .formula-box {
+        padding: 12px;
+        margin-top: 15px;
+    }
+
+    .formula-label {
+        font-size: 11px;
+        margin-bottom: 5px;
+    }
+
+    .formula-text {
+        font-size: 15px;
+    }
+
+    .fraction-top,
+    .fraction-bottom {
+        font-size: 11px;
+        padding: 2px 5px;
+    }
+
+    .card-footer {
+        padding: 15px;
+        /* Reduced from 25px */
+    }
+
+    .calc-button {
+        font-size: 14px;
+        padding: 12px 15px;
+        gap: 8px;
+    }
+
+    .info-card {
+        padding: 20px;
+    }
+
+    .info-card h3 {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .info-card p {
+        font-size: 13px;
+        line-height: 1.6;
+    }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    .calculators-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero-title {
+        font-size: 36px;
+    }
+
+    .hero-subtitle {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (min-width: 1025px) {
+    .calculators-grid {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 1200px;
+    }
+
+    .info-section {
+        max-width: 1200px;
+    }
+
+    .quick-links {
+        max-width: 1200px;
+    }
+}

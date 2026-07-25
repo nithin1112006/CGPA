@@ -1,0 +1,277 @@
+/* Department Select Page Styles */
+
+.department-select-page {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.department-select-page footer {
+    margin-top: auto;
+}
+
+/* Page Hero */
+.page-hero {
+    background: linear-gradient(-45deg, #86d437, #04AA6D, #7bc930, #028a55);
+    background-size: 300% 300%;
+    animation: gradientBG 8s ease infinite;
+    border-radius: 16px;
+    padding: 40px 30px;
+    margin: 20px auto;
+    max-width: 100%;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.breadcrumb a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+.breadcrumb .separator {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 16px;
+}
+
+.breadcrumb span:last-child {
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+}
+
+.page-title {
+    font-size: 36px;
+    font-weight: 800;
+    color: #ffffff;
+    margin: 0 0 10px 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.page-subtitle {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.95);
+    margin: 0;
+    font-weight: 500;
+}
+
+/* Departments Grid */
+.departments-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    max-width: 100%;
+    margin: 30px auto 40px;
+    padding: 0 10px;
+}
+
+/* Department Card */
+.department-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 2px solid #f0f0f0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.department-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(135deg, #86d437 0%, #7bc930 100%);
+    transform: scaleY(0);
+    transition: transform 0.3s ease;
+}
+
+.department-card:hover::before {
+    transform: scaleY(1);
+}
+
+.department-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(134, 212, 55, 0.2);
+    border-color: #86d437;
+}
+
+/* Department Icon */
+.dept-icon-wrapper {
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #86d437 0%, #7bc930 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+.department-card:hover .dept-icon-wrapper {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 4px 15px rgba(134, 212, 55, 0.4);
+}
+
+.dept-icon-wrapper svg {
+    width: 28px;
+    height: 28px;
+}
+
+/* Department Content */
+.dept-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.dept-short-name {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1a4704;
+    margin: 0 0 4px 0;
+}
+
+.dept-full-name {
+    font-size: 13px;
+    color: #666;
+    margin: 0;
+    line-height: 1.4;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+/* Department Arrow */
+.dept-arrow {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    color: #86d437;
+    transition: all 0.3s ease;
+}
+
+.department-card:hover .dept-arrow {
+    transform: translateX(5px);
+}
+
+.dept-arrow svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 768px) {
+
+    /* Mobile-optimized container */
+    .department-select-page {
+        padding: 0 10px;
+        max-width: 99%;
+    }
+
+    .page-hero {
+        padding: 30px 15px;
+        margin: 5px 0px 5px;
+    }
+
+    .page-title {
+        font-size: 22px;
+        white-space: nowrap;
+    }
+
+    .page-subtitle {
+        font-size: 14px;
+    }
+
+    .breadcrumb {
+        font-size: 13px;
+        margin-bottom: 15px;
+    }
+
+    .departments-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        margin: 25px auto 30px;
+    }
+
+    .department-card {
+        padding: 16px;
+    }
+
+    .dept-icon-wrapper {
+        width: 45px;
+        height: 45px;
+    }
+
+    .dept-icon-wrapper svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    .dept-short-name {
+        font-size: 16px;
+    }
+
+    .dept-full-name {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    .departments-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .page-title {
+        font-size: 30px;
+    }
+}
+
+@media only screen and (min-width: 1025px) {
+    .departments-grid {
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 1200px;
+    }
+}

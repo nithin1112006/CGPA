@@ -1,0 +1,324 @@
+/* SGPACalculator Page Styles - Consolidated from Department/Semester Select */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+.sgpa-calculator-page {
+    font-family: 'Outfit', sans-serif;
+    min-height: 100vh;
+    animation: fadeIn 0.5s ease-out;
+    max-width: 95%;
+    margin: 0 auto;
+    padding: 0 5px;
+}
+
+/* Subject Grades Container - Desktop Default */
+.subject-grades-container {
+    margin: 20px auto;
+    background: linear-gradient(135deg, #a2e55f 0%, #95db52 100%);
+    padding: 25px;
+    border-radius: 20px;
+    width: 95%;
+    max-width: 700px;
+    /* Default desktop width */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Subject Grade Item - Desktop Default */
+.subject-grade-item {
+    background: #fff;
+    padding: 16px 20px;
+    margin: 10px 0;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+/* Mobile Responsive Overrides */
+@media (max-width: 768px) {
+    .subject-grades-container {
+        padding: 10px;
+        /* Reduced padding on mobile */
+        max-width: 100%;
+        /* Use full available width on mobile */
+        border-radius: 16px;
+    }
+
+    .subject-grade-item {
+        padding: 12px 16px;
+        /* Reduced padding on mobile */
+        margin: 8px 0;
+        /* Reduced margin */
+    }
+
+    .sgpa-content-wrapper {
+        padding: 5px;
+        /* Minimal padding on mobile */
+    }
+}
+
+.sgpa-content-wrapper {
+    padding: 20px;
+    /* Default padding for desktop */
+}
+
+
+/* Back Button */
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 20px;
+    cursor: pointer;
+    color: #666;
+    font-weight: 600;
+    transition: color 0.2s;
+    background: none;
+    border: none;
+    font-size: 16px;
+    padding: 0;
+}
+
+.back-button:hover {
+    color: #1a4704;
+}
+
+.back-button svg {
+    margin-right: 8px;
+}
+
+
+/* Page Hero */
+.page-hero {
+    background: linear-gradient(-45deg, #86d437, #04AA6D, #7bc930, #028a55);
+    background-size: 300% 300%;
+    animation: gradientBG 8s ease infinite;
+    border-radius: 16px;
+    padding: 40px 30px;
+    margin: 20px auto;
+    max-width: 100%;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.page-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.1) 0%, transparent 60%);
+    pointer-events: none;
+}
+
+.page-title {
+    font-size: 36px;
+    font-weight: 800;
+    color: #ffffff;
+    margin: 0 0 10px 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1;
+}
+
+.page-subtitle {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.95);
+    margin: 0;
+    font-weight: 500;
+    position: relative;
+    z-index: 1;
+}
+
+/* Grids */
+.selection-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    max-width: 100%;
+    margin: 30px auto 40px;
+    padding: 0 10px;
+}
+
+.batch-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+/* Cards */
+.selection-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid #f0f0f0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+    text-align: left;
+}
+
+.selection-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(135deg, #86d437 0%, #7bc930 100%);
+    transform: scaleY(0);
+    transition: transform 0.3s ease;
+}
+
+.selection-card:hover::before {
+    transform: scaleY(1);
+}
+
+.selection-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(134, 212, 55, 0.2);
+    border-color: #86d437;
+}
+
+/* Batch Card Specifics */
+.batch-card {
+    min-width: 250px;
+    padding: 20px;
+}
+
+/* Icon Wrapper */
+.icon-wrapper {
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #86d437 0%, #7bc930 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+.selection-card:hover .icon-wrapper {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 4px 15px rgba(134, 212, 55, 0.4);
+}
+
+.icon-wrapper svg {
+    width: 28px;
+    height: 28px;
+}
+
+/* Content */
+.card-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1a4704;
+    margin: 0 0 4px 0;
+}
+
+.card-subtitle {
+    font-size: 13px;
+    color: #666;
+    margin: 0;
+    line-height: 1.4;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Arrow */
+.card-arrow {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    color: #86d437;
+    transition: all 0.3s ease;
+}
+
+.selection-card:hover .card-arrow {
+    transform: translateX(5px);
+}
+
+/* Responsive */
+@media only screen and (max-width: 768px) {
+    .page-hero {
+        padding: 30px 15px;
+    }
+
+    .page-title {
+        font-size: 24px;
+    }
+
+    .selection-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .batch-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding-bottom: 0;
+    }
+
+    .batch-grid::-webkit-scrollbar {
+        display: none;
+        /* Chrome/Safari/Opera */
+    }
+
+    .batch-card {
+        padding: 15px;
+    }
+
+    .sgpa-calculator-page {
+        max-width: 99%;
+        margin: 0 auto;
+        padding: 0 1px;
+    }
+
+    .selection-card {
+        padding: 15px;
+    }
+}
+
+.sgpa-page-wrapper {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 50%, #f0f0f0 100%);
+    padding-bottom: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.sgpa-page-wrapper footer {
+    margin-top: auto;
+}
